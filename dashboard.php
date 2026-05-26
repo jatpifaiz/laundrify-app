@@ -17,11 +17,11 @@ while ($row = mysqli_fetch_assoc($res_status)) {
 // Recent transactions (6 terbaru)
 $recent = mysqli_query($koneksi, "
     SELECT t.id, m.nama AS nama_member, l.nama_layanan,
-           t.berat_kg, t.total_harga, t.status, t.tanggal_masuk
+           t.berat_kg, t.total_harga, t.status, t.tgl_masuk
     FROM transaksi t
     JOIN member m ON t.id_member = m.id
     JOIN layanan l ON t.id_layanan = l.id
-    ORDER BY t.created_at DESC
+    ORDER BY t.id DESC
     LIMIT 6
 ");
 
@@ -190,7 +190,7 @@ include 'config/header.php';
             <td><?= htmlspecialchars($row['berat_kg']) ?> kg</td>
             <td style="font-weight:500;">Rp <?= number_format($row['total_harga'], 0, ',', '.') ?></td>
             <td style="color:var(--text-muted);font-size:0.82rem;">
-              <?= date('d M Y', strtotime($row['tanggal_masuk'])) ?>
+              <?= date('d M Y', strtotime($row['tgl_masuk'])) ?>
             </td>
             <td>
               <span class="badge badge-<?= htmlspecialchars($row['status']) ?>">
