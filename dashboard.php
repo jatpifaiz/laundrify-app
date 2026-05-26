@@ -53,7 +53,7 @@ include 'config/header.php';
       </svg>
     </div>
     <div class="stat-value" data-counter data-target="<?= $total_member ?>">0</div>
-    <div class="stat-label">Total Member</div>
+    <div class="stat-label">Total Pelanggan</div>
   </div>
 
   <div class="stat-card">
@@ -90,7 +90,7 @@ include 'config/header.php';
 </div>
 
 <!-- Status Breakdown + Quick Actions -->
-<div class="form-row" style="margin-bottom:28px;">
+<div class="form-row dashboard-row" style="margin-bottom:28px;">
 
   <div class="card">
     <div class="card-header">
@@ -138,7 +138,7 @@ include 'config/header.php';
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766z"/>
         </svg>
-        Tambah Member
+        Tambah Pelanggan
       </a>
       <a href="/laundrify-app/pages/services/add.php" class="btn btn-secondary" style="justify-content:center;">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -151,7 +151,7 @@ include 'config/header.php';
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/>
         </svg>
-        Daftar Member
+        Data Pelanggan
       </a>
     </div>
   </div>
@@ -184,15 +184,13 @@ include 'config/header.php';
         <tbody>
           <?php $no = 1; while ($row = mysqli_fetch_assoc($recent)): ?>
           <tr>
-            <td style="color:var(--text-muted);font-size:0.8rem;"><?= $no++ ?></td>
-            <td><?= htmlspecialchars($row['nama_member']) ?></td>
-            <td><?= htmlspecialchars($row['nama_layanan']) ?></td>
-            <td><?= htmlspecialchars($row['berat_kg']) ?> kg</td>
-            <td style="font-weight:500;">Rp <?= number_format($row['total_harga'], 0, ',', '.') ?></td>
-            <td style="color:var(--text-muted);font-size:0.82rem;">
-              <?= date('d M Y', strtotime($row['tgl_masuk'])) ?>
-            </td>
-            <td>
+            <td data-label="#"><?= $no++ ?></td>
+            <td data-label="Pelanggan"><?= htmlspecialchars($row['nama_member']) ?></td>
+            <td data-label="Layanan"><?= htmlspecialchars($row['nama_layanan']) ?></td>
+            <td data-label="Berat"><?= htmlspecialchars($row['berat_kg']) ?> kg</td>
+            <td data-label="Total" style="font-weight:500;">Rp <?= number_format($row['total_harga'], 0, ',', '.') ?></td>
+            <td data-label="Tgl Masuk"><?= date('d M Y', strtotime($row['tgl_masuk'])) ?></td>
+            <td data-label="Status">
               <span class="badge badge-<?= htmlspecialchars($row['status']) ?>">
                 <span class="badge-dot"></span>
                 <?= ucfirst(htmlspecialchars($row['status'])) ?>
