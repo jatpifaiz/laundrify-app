@@ -6,7 +6,31 @@
       "PowerShell(Start-Process \"http://localhost/laundrify-app/dashboard.php\")",
       "Bash(mysql *)",
       "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root -e \"DESCRIBE laundri_db.transaksi;\")",
-      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root -e \"DESCRIBE laundri_db.member; DESCRIBE laundri_db.layanan; DESCRIBE laundri_db.transaksi;\")"
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root -e \"DESCRIBE laundri_db.member; DESCRIBE laundri_db.layanan; DESCRIBE laundri_db.transaksi;\")",
+      "PowerShell(New-Item *)",
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root laundri_db -e \"ALTER TABLE transaksi MODIFY COLUMN tgl_selesai DATE NULL DEFAULT NULL; ALTER TABLE transaksi ADD COLUMN IF NOT EXISTS id_user INT NULL AFTER id;\" 2>&1)",
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root laundri_db -e \"CREATE TABLE IF NOT EXISTS users \\(id INT AUTO_INCREMENT PRIMARY KEY, nama VARCHAR\\(100\\) NOT NULL, email VARCHAR\\(100\\) NOT NULL UNIQUE, password VARCHAR\\(255\\) NOT NULL, no_hp VARCHAR\\(15\\) NOT NULL DEFAULT '', alamat TEXT NOT NULL DEFAULT '', id_member INT NULL, role ENUM\\('admin','user'\\) NOT NULL DEFAULT 'user', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\\);\" 2>&1)",
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root laundri_db -e \"DESCRIBE users; DESCRIBE transaksi;\" 2>&1)",
+      "PowerShell(Start-Process \"http://localhost/laundrify-app/login.php\")",
+      "Bash(C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe *)",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\config\\\\membership.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\pages\\\\users\\\\index.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\pages\\\\users\\\\update_membership.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\user\\\\booking.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\user\\\\proccess_booking.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\user\\\\riwayat.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\user\\\\index.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\user\\\\profile.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\auth\\\\login.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\auth\\\\register.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\pages\\\\users\\\\approve_membership.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\user\\\\proccess_profile.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\user\\\\header.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\user\\\\footer.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\dashboard.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\pages\\\\member\\\\index.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\pages\\\\services\\\\index.php\")",
+      "Bash(\"C:\\\\xampp\\\\php\\\\php.exe\" -l \"C:\\\\xampp\\\\htdocs\\\\laundrify-app\\\\pages\\\\transaction\\\\index.php\")"
     ]
   }
 }
