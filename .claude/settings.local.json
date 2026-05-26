@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Process *)",
+      "Bash(curl *)",
+      "PowerShell(Start-Process \"http://localhost/laundrify-app/dashboard.php\")",
+      "Bash(mysql *)",
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root -e \"DESCRIBE laundri_db.transaksi;\")",
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root -e \"DESCRIBE laundri_db.member; DESCRIBE laundri_db.layanan; DESCRIBE laundri_db.transaksi;\")"
+    ]
+  }
+}
