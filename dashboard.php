@@ -35,7 +35,7 @@ include 'config/header.php';
     <h2>Dashboard</h2>
     <p>Ringkasan data laundry Anda</p>
   </div>
-  <a href="/laundrify-app/pages/transaction/add.php" class="btn btn-primary">
+  <a href="<?= $base_url ?>pages/transaction/add.php" class="btn btn-primary">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
     </svg>
@@ -95,7 +95,7 @@ include 'config/header.php';
   <div class="card">
     <div class="card-header">
       <h3>Status Transaksi</h3>
-      <a href="/laundrify-app/pages/transaction/index.php" style="font-size:0.8rem;color:var(--text-muted);">Lihat semua &rarr;</a>
+      <a href="<?= $base_url ?>pages/transaction/index.php" style="font-size:0.8rem;color:var(--text-muted);">Lihat semua &rarr;</a>
     </div>
     <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
       <?php
@@ -128,26 +128,26 @@ include 'config/header.php';
       <h3>Aksi Cepat</h3>
     </div>
     <div class="card-body" style="display:flex;flex-direction:column;gap:10px;">
-      <a href="/laundrify-app/pages/transaction/add.php" class="btn btn-primary" style="justify-content:center;">
+      <a href="<?= $base_url ?>pages/transaction/add.php" class="btn btn-primary" style="justify-content:center;">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
         </svg>
         Tambah Transaksi
       </a>
-      <a href="/laundrify-app/pages/member/add.php" class="btn btn-secondary" style="justify-content:center;">
+      <a href="<?= $base_url ?>pages/member/add.php" class="btn btn-secondary" style="justify-content:center;">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766z"/>
         </svg>
         Tambah Pelanggan
       </a>
-      <a href="/laundrify-app/pages/services/add.php" class="btn btn-secondary" style="justify-content:center;">
+      <a href="<?= $base_url ?>pages/services/add.php" class="btn btn-secondary" style="justify-content:center;">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"/>
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z"/>
         </svg>
         Tambah Layanan
       </a>
-      <a href="/laundrify-app/pages/member/index.php" class="btn btn-secondary" style="justify-content:center;">
+      <a href="<?= $base_url ?>pages/member/index.php" class="btn btn-secondary" style="justify-content:center;">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/>
         </svg>
@@ -163,7 +163,7 @@ include 'config/header.php';
   <div class="card">
     <div class="card-header">
       <h3>Transaksi Terbaru</h3>
-      <a href="/laundrify-app/pages/transaction/index.php" class="btn btn-secondary" style="padding:6px 14px;font-size:0.8rem;">
+      <a href="<?= $base_url ?>pages/transaction/index.php" class="btn btn-secondary" style="padding:6px 14px;font-size:0.8rem;">
         Lihat Semua
       </a>
     </div>
@@ -207,7 +207,7 @@ include 'config/header.php';
         </svg>
         <h3>Belum ada transaksi</h3>
         <p>Mulai tambahkan transaksi pertama Anda</p>
-        <a href="/laundrify-app/pages/transaction/add.php" class="btn btn-primary">Tambah Transaksi</a>
+        <a href="<?= $base_url ?>pages/transaction/add.php" class="btn btn-primary">Tambah Transaksi</a>
       </div>
       <?php endif; ?>
     </div>
