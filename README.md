@@ -5,7 +5,7 @@
 **Sistem Manajemen Laundry Berbasis Web**
 
 ![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?style=flat-square&logo=php&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-laundri__db-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-laundrify__db-4479A1?style=flat-square&logo=mysql&logoColor=white)
 ![XAMPP](https://img.shields.io/badge/XAMPP-Apache-FB7A24?style=flat-square&logo=xampp&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-Responsive-1572B6?style=flat-square&logo=css3&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Selesai-16a34a?style=flat-square)
@@ -119,7 +119,8 @@ laundrify-app/
 │   └── js/script.js         # Toast, sidebar, validasi form, kalkulasi otomatis
 │
 ├── database/
-│   ├── laundri_db.sql               # Schema + data awal
+│   ├── schema.sql                   # Schema tabel
+│   ├── seed.sql                     # Data awal
 │   ├── migration_auth.sql           # Migrasi tabel users
 │   └── migration_membership.sql     # Migrasi kolom membership
 │
@@ -179,11 +180,12 @@ C:\xampp\htdocs\laundrify-app\
 
 ```bash
 # Via MySQL CLI
-mysql -u root -e "CREATE DATABASE laundri_db;"
-mysql -u root laundri_db < database/laundri_db.sql
+mysql -u root -e "CREATE DATABASE laundrify_db;"
+mysql -u root laundrify_db < database/schema.sql
+mysql -u root laundrify_db < database/seed.sql
 ```
 
-> Atau buka **phpMyAdmin** → buat database `laundri_db` → klik **Import** → pilih `database/laundri_db.sql`
+> Atau buka **phpMyAdmin** → buat database `laundrify_db` → klik **Import** → pilih `database/schema.sql` lalu `database/seed.sql`
 
 **3. Jalankan Apache & MySQL**
 
@@ -236,7 +238,7 @@ Aplikasi dirancang responsif untuk semua ukuran layar:
 
 Proyek ini dikembangkan sebagai **Tugas Akhir Mata Pelajaran Pilihan**
 
-**Nama Siswa** &nbsp;·&nbsp; Kelas XI TKJ &nbsp;·&nbsp; SMK Negeri 4 Bandung
+**Jatpi Faiz** &nbsp;·&nbsp; Kelas XI TKJ &nbsp;·&nbsp; SMK Negeri 4 Bandung
 
 ---
 
