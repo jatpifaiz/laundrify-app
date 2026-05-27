@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<script src="/laundrify-app/assets/js/script.js"></script>
+<script src="<?= $base_url ?>assets/js/script.js"></script>
 <script>
 (function () {
   var toggle = document.getElementById('user-nav-toggle');

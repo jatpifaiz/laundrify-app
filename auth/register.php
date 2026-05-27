@@ -3,7 +3,7 @@ require_once '../config/db.php';
 require_once '../config/session.php';
 
 if (isset($_SESSION['user_id'])) {
-    header("Location: /laundrify-app/user/index.php");
+    header("Location: " . $base_url . "user/index.php");
     exit;
 }
 
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['role']       = 'user';
                 $_SESSION['id_member']  = $id_member;
                 $_SESSION['membership'] = 'reguler';
-                header("Location: /laundrify-app/user/index.php?sukses=daftar");
+                header("Location: " . $base_url . "user/index.php?sukses=daftar");
                 exit;
             } else {
                 $error = 'Terjadi kesalahan. Coba lagi.';
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Daftar — Laundrify</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/laundrify-app/assets/css/style.css">
+  <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css">
 </head>
 <body class="standalone">
 
@@ -143,12 +143,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 
     <div class="auth-footer-link">
-      Sudah punya akun? <a href="/laundrify-app/auth/login.php">Masuk di sini</a>
+      Sudah punya akun? <a href="<?= $base_url ?>auth/login.php">Masuk di sini</a>
     </div>
 
   </div>
 </div>
 
-<script src="/laundrify-app/assets/js/script.js"></script>
+<script src="<?= $base_url ?>assets/js/script.js"></script>
 </body>
 </html>

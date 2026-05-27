@@ -106,7 +106,7 @@ JS;
 
 <div class="card" style="max-width:600px;">
   <div class="card-body">
-    <form action="/laundrify-app/user/proccess_booking.php" method="POST" data-validate>
+    <form action="<?= $base_url ?>user/proccess_booking.php" method="POST" data-validate>
 
       <div class="form-group">
         <label for="id_layanan">Jenis Layanan <span class="req">*</span></label>
@@ -171,7 +171,7 @@ JS;
 
       <div class="form-actions">
         <button type="submit" class="btn btn-primary">Kirim Booking</button>
-        <a href="/laundrify-app/user/index.php" class="btn btn-secondary">Batal</a>
+        <a href="<?= $base_url ?>user/index.php" class="btn btn-secondary">Batal</a>
       </div>
 
     </form>

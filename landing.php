@@ -1,7 +1,8 @@
 <?php
+require_once 'config/db.php';
 require_once 'config/session.php';
 if (isset($_SESSION['user_id'])) {
-    header("Location: " . ($_SESSION['role'] === 'admin' ? '/laundrify-app/dashboard.php' : '/laundrify-app/user/index.php'));
+    header("Location: " . ($_SESSION['role'] === 'admin' ? $base_url . 'dashboard.php' : $base_url . 'user/index.php'));
     exit;
 }
 ?>
@@ -799,7 +800,7 @@ if (isset($_SESSION['user_id'])) {
 <header>
   <nav class="navbar">
     <div class="container navbar-inner">
-      <a href="/laundrify-app/landing.php" class="nav-brand">
+      <a href="<?= $base_url ?>landing.php" class="nav-brand">
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
@@ -815,8 +816,8 @@ if (isset($_SESSION['user_id'])) {
       </div>
 
       <div class="nav-cta">
-        <a href="/laundrify-app/auth/register.php" class="btn-ghost">Daftar</a>
-        <a href="/laundrify-app/auth/login.php" class="btn-primary">Masuk &rarr;</a>
+        <a href="<?= $base_url ?>auth/register.php" class="btn-ghost">Daftar</a>
+        <a href="<?= $base_url ?>auth/login.php" class="btn-primary">Masuk &rarr;</a>
       </div>
 
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
@@ -858,7 +859,7 @@ if (isset($_SESSION['user_id'])) {
         </p>
 
         <div class="hero-actions">
-          <a href="/laundrify-app/auth/register.php" class="btn-hero primary">
+          <a href="<?= $base_url ?>auth/register.php" class="btn-hero primary">
             Mulai Sekarang
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
@@ -1116,7 +1117,7 @@ if (isset($_SESSION['user_id'])) {
             Diskon bulk ≥ 6 kg
           </li>
         </ul>
-        <a href="/laundrify-app/auth/register.php" class="btn-pricing outlined">Daftar Gratis</a>
+        <a href="<?= $base_url ?>auth/register.php" class="btn-pricing outlined">Daftar Gratis</a>
       </div>
 
       <div class="pricing-card featured">
@@ -1150,7 +1151,7 @@ if (isset($_SESSION['user_id'])) {
             Diskon 10% untuk order ≥ 6 kg
           </li>
         </ul>
-        <a href="/laundrify-app/auth/register.php" class="btn-pricing filled">Daftar & Ajukan Upgrade</a>
+        <a href="<?= $base_url ?>auth/register.php" class="btn-pricing filled">Daftar & Ajukan Upgrade</a>
       </div>
 
     </div>
@@ -1166,13 +1167,13 @@ if (isset($_SESSION['user_id'])) {
       <h2>Siap Mencoba Laundrify?</h2>
       <p>Bergabunglah dengan pelanggan yang sudah merasakan kemudahan laundry modern. Daftar gratis, tidak diperlukan kartu kredit.</p>
       <div class="cta-actions">
-        <a href="/laundrify-app/auth/register.php" class="btn-cta white">
+        <a href="<?= $base_url ?>auth/register.php" class="btn-cta white">
           Buat Akun Gratis
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
           </svg>
         </a>
-        <a href="/laundrify-app/auth/login.php" class="btn-cta outline-white">Sudah punya akun? Masuk</a>
+        <a href="<?= $base_url ?>auth/login.php" class="btn-cta outline-white">Sudah punya akun? Masuk</a>
       </div>
     </div>
   </div>
@@ -1208,8 +1209,8 @@ if (isset($_SESSION['user_id'])) {
       <nav class="footer-col">
         <h4>Akun</h4>
         <ul>
-          <li><a href="/laundrify-app/auth/login.php">Masuk</a></li>
-          <li><a href="/laundrify-app/auth/register.php">Daftar</a></li>
+          <li><a href="<?= $base_url ?>auth/login.php">Masuk</a></li>
+          <li><a href="<?= $base_url ?>auth/register.php">Daftar</a></li>
         </ul>
       </nav>
     </div>

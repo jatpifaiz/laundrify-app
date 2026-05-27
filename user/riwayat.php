@@ -18,7 +18,7 @@ $result = mysqli_query($koneksi, "
     <h2>Riwayat Pesanan</h2>
     <p>Semua riwayat pesanan laundry Anda.</p>
   </div>
-  <a href="/laundrify-app/user/booking.php" class="btn btn-primary">
+  <a href="<?= $base_url ?>user/booking.php" class="btn btn-primary">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
     Booking Baru
   </a>
@@ -30,7 +30,7 @@ $result = mysqli_query($koneksi, "
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75m-7.5 3.75h15M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6z"/></svg>
     <h3>Belum ada pesanan</h3>
     <p>Buat booking laundry pertama Anda sekarang.</p>
-    <a href="/laundrify-app/user/booking.php" class="btn btn-primary">Buat Booking</a>
+    <a href="<?= $base_url ?>user/booking.php" class="btn btn-primary">Buat Booking</a>
   </div>
 </div>
 <?php else: ?>

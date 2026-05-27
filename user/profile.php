@@ -61,7 +61,7 @@ $tier = getTier($user['membership'] ?? 'reguler');
           <span style="font-size:.85rem;color:#92400e;font-weight:500;">Permintaan upgrade sedang ditinjau admin. Kami akan segera menghubungi Anda.</span>
         </div>
       <?php else: ?>
-        <form method="POST" action="/laundrify-app/user/proccess_profile.php">
+        <form method="POST" action="<?= $base_url ?>user/proccess_profile.php">
           <input type="hidden" name="action" value="request_membership">
           <button type="submit" class="btn btn-primary" style="gap:8px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
@@ -79,7 +79,7 @@ $tier = getTier($user['membership'] ?? 'reguler');
 <div class="card form-wrapper" style="max-width:560px;margin-bottom:20px;">
   <div class="card-header"><h3>Informasi Akun</h3></div>
   <div class="card-body">
-    <form action="/laundrify-app/user/proccess_profile.php" method="POST" data-validate>
+    <form action="<?= $base_url ?>user/proccess_profile.php" method="POST" data-validate>
       <input type="hidden" name="action" value="update_info">
 
       <div class="form-group">
@@ -122,7 +122,7 @@ $tier = getTier($user['membership'] ?? 'reguler');
 <div class="card form-wrapper" style="max-width:560px;">
   <div class="card-header"><h3>Ganti Password</h3></div>
   <div class="card-body">
-    <form action="/laundrify-app/user/proccess_profile.php" method="POST" data-validate>
+    <form action="<?= $base_url ?>user/proccess_profile.php" method="POST" data-validate>
       <input type="hidden" name="action" value="change_password">
 
       <div class="form-group">

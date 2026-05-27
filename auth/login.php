@@ -3,7 +3,7 @@ require_once '../config/db.php';
 require_once '../config/session.php';
 
 if (isset($_SESSION['user_id'])) {
-    header("Location: " . ($_SESSION['role'] === 'admin' ? '/laundrify-app/dashboard.php' : '/laundrify-app/user/index.php'));
+    header("Location: " . ($_SESSION['role'] === 'admin' ? $base_url . 'dashboard.php' : $base_url . 'user/index.php'));
     exit;
 }
 
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['role']       = $user['role'];
             $_SESSION['id_member']  = $user['id_member'];
             $_SESSION['membership'] = $user['membership'] ?? 'reguler';
-            header("Location: " . ($user['role'] === 'admin' ? '/laundrify-app/dashboard.php' : '/laundrify-app/user/index.php'));
+            header("Location: " . ($user['role'] === 'admin' ? $base_url . 'dashboard.php' : $base_url . 'user/index.php'));
             exit;
         } else {
             $error = 'Email atau password salah.';
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Masuk — Laundrify</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/laundrify-app/assets/css/style.css">
+  <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css">
 </head>
 <body class="standalone">
 
@@ -87,12 +87,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 
     <div class="auth-footer-link">
-      Belum punya akun? <a href="/laundrify-app/auth/register.php">Daftar sekarang</a>
+      Belum punya akun? <a href="<?= $base_url ?>auth/register.php">Daftar sekarang</a>
     </div>
 
   </div>
 </div>
 
-<script src="/laundrify-app/assets/js/script.js"></script>
+<script src="<?= $base_url ?>assets/js/script.js"></script>
 </body>
 </html>

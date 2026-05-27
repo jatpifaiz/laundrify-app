@@ -28,7 +28,7 @@ $recent = mysqli_query($koneksi, "
       <span class="badge <?= $tier['badge_class'] ?>" style="margin-left:6px;font-size:.75rem;"><?= $tier['label'] ?></span>
     </p>
   </div>
-  <a href="/laundrify-app/user/booking.php" class="btn btn-primary">
+  <a href="<?= $base_url ?>user/booking.php" class="btn btn-primary">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
     Buat Booking
   </a>
@@ -68,7 +68,7 @@ $recent = mysqli_query($koneksi, "
 <div class="card">
   <div class="card-header">
     <h3>Pesanan Terbaru</h3>
-    <a href="/laundrify-app/user/riwayat.php" class="btn btn-secondary" style="padding:6px 14px;font-size:0.8rem;">Lihat Semua</a>
+    <a href="<?= $base_url ?>user/riwayat.php" class="btn btn-secondary" style="padding:6px 14px;font-size:0.8rem;">Lihat Semua</a>
   </div>
   <div class="table-wrapper" style="border:none;border-radius:0;box-shadow:none;">
     <?php if (mysqli_num_rows($recent) > 0): ?>
@@ -99,7 +99,7 @@ $recent = mysqli_query($koneksi, "
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75m-7.5 3.75h15M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6z"/></svg>
       <h3>Belum ada pesanan</h3>
       <p>Yuk buat booking laundry pertama Anda!</p>
-      <a href="/laundrify-app/user/booking.php" class="btn btn-primary">Buat Booking</a>
+      <a href="<?= $base_url ?>user/booking.php" class="btn btn-primary">Buat Booking</a>
     </div>
     <?php endif; ?>
   </div>
